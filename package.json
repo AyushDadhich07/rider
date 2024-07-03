@@ -1,0 +1,55 @@
+{
+  "name": "iitg-rideshare",
+  "version": "1.0.0",
+  "description": "Ride sharing application for IIT Guwahati students",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "server": "nodemon server/server.js",
+    "dev": "concurrently \"npm run server\" \"npm run start\"",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "keywords": [
+    "rideshare",
+    "iitg",
+    "students"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^5.2.1",
+    "react-scripts": "^5.0.1",
+    "sequelize": "^6.37.3",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "concurrently": "^6.0.2",
+    "nodemon": "^2.0.7"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
