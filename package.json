@@ -2,7 +2,7 @@
   "name": "iitg-rideshare",
   "version": "1.0.0",
   "description": "Ride sharing application for IIT Guwahati students",
-  "main": "server/server.js",
+  "main": "server.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
