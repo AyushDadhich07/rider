@@ -101,7 +101,15 @@ const RideShareHomepage = () => {
 
   const fetchRecentRequests = async () => {
     try {
-      const response = await fetch('https://gleeful-eclair-773821.netlify.app/api/ride-requests');
+      const response = await fetch('https://gleeful-eclair-773821.netlify.app/api/ride-requests', {
+    mode: 'no-cors'
+})
+.then(response => {
+    console.log(response);
+})
+.catch(error => {
+    console.error('Error:', error);
+});
       const data = await response.json();
       setRecentRequests(Array.isArray(data) ? data : []);
     } catch (error) {
@@ -119,7 +127,15 @@ const RideShareHomepage = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ name, phone, destination, date, notes }),
-      });
+      }, {
+    mode: 'no-cors'
+})
+.then(response => {
+    console.log(response);
+})
+.catch(error => {
+    console.error('Error:', error);
+});
       if (response.ok) {
         alert('Ride request submitted successfully!');
         setName('');
@@ -145,7 +161,15 @@ const RideShareHomepage = () => {
         destination: searchDestination,
         date: searchDate,
       }).toString();
-      const response = await fetch(`https://gleeful-eclair-773821.netlify.app/api/ride-requests/search?${queryParams}`);
+      const response = await fetch(`https://gleeful-eclair-773821.netlify.app/api/ride-requests/search?${queryParams}`, {
+    mode: 'no-cors'
+})
+.then(response => {
+    console.log(response);
+})
+.catch(error => {
+    console.error('Error:', error);
+});
       const data = await response.json();
       setSearchResults(Array.isArray(data) ? data : []);
     } catch (error) {
@@ -156,7 +180,15 @@ const RideShareHomepage = () => {
 
   const fetchRideDetails = async (id) => {
     try {
-      const response = await fetch(`https://gleeful-eclair-773821.netlify.app/api/ride-requests/${id}`);
+      const response = await fetch(`https://gleeful-eclair-773821.netlify.app/api/ride-requests/${id}`, {
+    mode: 'no-cors'
+})
+.then(response => {
+    console.log(response);
+})
+.catch(error => {
+    console.error('Error:', error);
+});
       const data = await response.json();
       setSelectedRide(data);
     } catch (error) {
