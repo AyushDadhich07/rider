@@ -101,7 +101,7 @@ const RideShareHomepage = () => {
 
   const fetchRecentRequests = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/ride-requests');
+      const response = await fetch('https://gleeful-eclair-773821.netlify.app/api/ride-requests');
       const data = await response.json();
       setRecentRequests(Array.isArray(data) ? data : []);
     } catch (error) {
@@ -113,7 +113,7 @@ const RideShareHomepage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:3001/api/ride-requests', {
+      const response = await fetch('https://gleeful-eclair-773821.netlify.app/api/ride-requests', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -145,7 +145,7 @@ const RideShareHomepage = () => {
         destination: searchDestination,
         date: searchDate,
       }).toString();
-      const response = await fetch(`http://localhost:3001/api/ride-requests/search?${queryParams}`);
+      const response = await fetch(`https://gleeful-eclair-773821.netlify.app/api/ride-requests/search?${queryParams}`);
       const data = await response.json();
       setSearchResults(Array.isArray(data) ? data : []);
     } catch (error) {
@@ -156,7 +156,7 @@ const RideShareHomepage = () => {
 
   const fetchRideDetails = async (id) => {
     try {
-      const response = await fetch(`http://localhost:3001/api/ride-requests/${id}`);
+      const response = await fetch(`https://gleeful-eclair-773821.netlify.app/api/ride-requests/${id}`);
       const data = await response.json();
       setSelectedRide(data);
     } catch (error) {
